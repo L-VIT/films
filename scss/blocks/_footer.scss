@@ -1,0 +1,41 @@
+.footer{
+    padding: 20px 0;
+    background-color: $header-bg;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 5px;
+}
+
+.footer-info{
+
+    &-box{
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .social-box{
+        justify-content: start;
+    }
+}
+
+.footer-contacts__title{
+    margin-bottom: 10px;
+}
+
+.footer-contacts__list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-contacts__list-item{
+    transition: $transition;
+
+    &:hover{
+        color: $main-color;
+    }
+}

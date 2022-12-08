@@ -1,0 +1,371 @@
+.header {
+    box-shadow: 0 1px 15px 2px rgba(0, 0, 0, .5);
+    background-color: $header-bg;
+    position: sticky;
+    top: 0;
+    z-index: 7;
+    
+    &-top {
+        padding: 5px 0;
+
+        &__inner {
+            @extend %flex-center;
+            border-bottom: $border;
+            padding-bottom: 5px;
+        }
+
+        &__menu-box {
+            max-width: 500px;
+            width: 100%;
+        }
+    }
+
+    &-menu {
+        @extend %flex-center;
+        width: 100%;
+
+        &__item-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 18px;
+            color: $text-color;
+            transition: $transition;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: auto;
+                bottom: -3px;
+                width: 0;
+                height: 3px;
+                background-color: #FB9541;
+                transition: $transition;
+            }
+
+            &:hover {
+                color: $main-color;
+
+                &::before {
+                    width: 100%;
+                }
+            }
+
+            &:active {
+                color: #e69500;
+            }
+        }
+    }
+}
+
+.item-active {
+    color: $main-color;
+}
+
+.btn-call {
+    position: relative;
+    padding: 10px 25px 10px 45px;
+    border-radius: 15px;
+    border: 1px solid $main-color;
+    transition: $transition;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 6px;
+        width: 25px;
+        height: 25px;
+        background-image: url(../img/icons/phone-callback.svg);
+        background-size: cover;
+        transition: $transition;
+    }
+
+    &:hover {
+        background-color: $main-color;
+        color: #fff;
+
+        &::before {
+            background-image: url(../img/icons/phone-callback-white.svg);
+        }
+    }
+}
+
+.header-bottom__inner{
+    padding: 10px 0;
+    @extend %flex-center;
+}
+
+.header-bottom__phone-list{
+    @extend %flex-center;
+    gap: 40px;
+}
+
+.phone-list__item{
+    position: relative;
+    padding-left: 20px;
+
+    & a{
+        transition: $transition;
+
+        &:hover{
+           color: $main-color; 
+        }
+    }
+
+    &::before{
+        content: "";
+        background-image: url(../img/icons/phone.svg);
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+    }
+
+    &:first-child{
+        padding-left: 40px;
+    
+        &::before{
+            content: "";
+            border-radius: 30%;
+            width: 30px;
+            height: 30px;
+            background-image: url(../img/phone-gif.gif);
+            background-size: cover;
+            position: absolute;
+            top: -10px;
+            left: 0;
+            border: 1px solid $main-color;;
+        }
+    }
+}
+
+.social-box{
+    @extend %flex-center;
+}
+
+.social-item:nth-child(1) .social-item__link{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/icons/facebook.svg);
+    transition: $transition;
+
+    &:hover{
+        background-image: url(../img/icons/facebook-hover.svg);
+    }
+}
+
+.social-item:nth-child(2) .social-item__link{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/icons/youtube.svg);
+    background-size: cover;
+    transition: $transition;
+
+    &:hover{
+        background-image: url(../img/icons/youtube-hover.svg);
+    }
+}
+
+// mobile menu
+
+/* mobile menu */
+.mobile-menu-btn {
+    display: none;
+    background-color: transparent;
+    color: #ccc;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 60px;
+    height: 50px;
+    font-size: 0;
+    text-indent: -9999px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border: none;
+    border-radius: none;
+    cursor: pointer;
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+    margin-right: -15px;
+    margin-top: -20px;
+}
+
+.mobile-menu-btn:focus {
+    outline: none;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    position: absolute;
+    top: 34px;
+    left: 18px;
+    right: 18px;
+    height: 3px;
+    background: #FB9514;
+}
+
+.mobile-menu-btn span::before,
+.mobile-menu-btn span::after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FB9514;
+    content: "";
+}
+
+.mobile-menu-btn span::before {
+    top: -10px;
+}
+
+.mobile-menu-btn span::after {
+    bottom: -10px;
+}
+
+.mobile-menu-btn span {
+    -webkit-transition: background 0s 0.3s;
+    transition: background 0s 0.3s;
+}
+
+.mobile-menu-btn span::before,
+.mobile-menu-btn span::after {
+    -webkit-transition-duration: 0.3s, 0.3s;
+    transition-duration: 0.3s, 0.3s;
+    -webkit-transition-delay: 0.3s, 0s;
+    transition-delay: 0.3s, 0s;
+}
+
+.mobile-menu-btn span::before {
+    -webkit-transition-property: top, transform;
+    transition-property: top, transform;
+}
+
+.mobile-menu-btn span::after {
+    -webkit-transition-property: bottom, transform;
+    transition-property: bottom, transform;
+}
+
+.mobile-menu-btn.mobile-menu-btn--active span {
+    background: none;
+}
+
+.mobile-menu-btn.mobile-menu-btn--active span::before,
+.mobile-menu-btn.mobile-menu-btn--active span::after {
+    background-color: #ff3264;
+    -webkit-transition-delay: 0s, 0.3s;
+    transition-delay: 0s, 0.3s;
+}
+
+.mobile-menu-btn.mobile-menu-btn--active span::before {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.mobile-menu-btn.mobile-menu-btn--active span::after {
+    bottom: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+//список номерів
+.mobile-phone-list-btn{
+    position: relative;
+    padding-right: 16px;
+}
+
+.arrow {
+    background-image: url(../img/icons/arrow-down.svg);
+    width: 15px;
+    height: 8px;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    background-size: cover;
+    cursor: pointer;
+    transition: $transition;
+}
+
+.arrow--active{
+    transform: rotateX(180deg);
+}
+
+.mobile-phone-list{
+    position: absolute;
+    top: 30px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 50;
+    border-radius: 10px;
+    background-color: rgba(240,240,240,0.9);
+    padding: 10px;
+    width: 170px;
+    transition: $transition;
+}
+
+.mobile-phone-list--active{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+.mobile-phone-list-btn{
+    display: none;
+}
+
+.mobile-phone-list__item + .mobile-phone-list__item{
+    margin-top: 10px;
+}
+
+//mobile menu
+.mobile-menu {
+    color: #282828;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background-color: $mobile-bg;
+    transform: translateY(-200%);
+    box-shadow: 5px 0px 20px #282828;
+    padding: 35px;
+    padding-left: 70px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+    z-index: 6;
+
+    &__list{
+        border-bottom: $border;
+    }
+
+    .social-box{
+        justify-content: start;
+        margin-top: 15px;
+    }
+}
+
+.mobile-menu--open {
+    transform: translateY(0%);
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu__list-item + .mobile-menu__list-item{
+    margin-top: 10px;
+}
+
+.mobile-menu__list-item:last-child{
+    margin-bottom: 15px;
+}

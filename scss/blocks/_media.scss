@@ -1,0 +1,208 @@
+@media(max-width: 1080px) {
+    .header-bottom,
+    .btn-call,
+    .header-top__menu-box {
+        display: none;
+    }
+
+    .header-top__inner {
+        border-bottom: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .mobile-phone-list-btn {
+        display: block;
+    }
+
+    .about__img{
+        left: -250px;
+    }
+}
+
+@media(max-width: 950px){
+    .footer-contacts__list{
+        grid-template-columns: 1fr 1fr;
+    }
+    .routes-info-box{
+        overflow-x: scroll;
+    }
+}
+
+@media(max-width: 900px){
+    .route__inner{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .route__info{
+        max-width: 90%;
+
+        &-title{
+            padding-top: 10px;
+        }
+    }
+
+    .route__img-box{
+        max-width: 60%;
+    }
+
+    .transport-item__img-box,
+    .transport-item__info{
+        max-width: 50%;
+    }
+
+    .about__inner{
+        flex-direction: column;
+    }
+
+    .about__img{
+        left: 0;
+        width: 100%;
+    }
+
+    .about__img-box{
+        max-width: 60%;
+    }
+
+    .about__info{
+        max-width: 90%;
+    }
+
+    .contacts-lists{
+        gap: 0px;
+    }
+}
+
+@media(max-width: 750px){
+    .transport-item__info{
+        padding: 0;
+    }
+
+    .transport-item{
+        margin-bottom: 10px;
+    }
+
+    .advantages__inner{
+        flex-wrap: wrap;
+    }
+
+    .advantages__item{
+        width: 45%;
+    }
+
+    .callback__form input,
+    .callback__form button{
+        margin-right: 0;
+        width: 300px;
+    }
+
+    .callback__form{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .footer-contacts__list{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 650px){
+    .route__img-box {
+        max-width: 80%;
+    }
+
+    .transport-item:nth-child(odd){
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .transport-item:nth-child(even){
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .transport-item__info{
+        max-width: 80%;
+        text-align: center;
+    }
+
+    .transport-item__img-box{
+        max-width: 70%;
+    }
+
+    .about__img-box{
+        max-width: 90%;
+    }
+}
+
+@media(max-width: 550px){
+    .about__info-title span, 
+    .advantages__title span, 
+    .transport__title span,
+    .travel__title span,
+    .routes-info-title span {
+        padding-right: 0;
+        &::after{
+            display: none;
+        }
+    }
+
+    .footer-info-box{
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media(max-width: 501px){
+    .header-top__inner{
+        gap: 0px;
+    }
+
+    .header-top__logo{
+        display: block;
+        width: 30%;
+        margin-right: 10px;
+
+        &-img{
+            width: 100%;
+        }
+    }
+
+    .mobile-phone-list-btn{
+        font-size: 14px;
+    }
+
+    .footer__inner{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mobile-menu{
+        top: 45px;
+    }
+}
+
+@media(max-width: 400px){
+    .advantages__item{
+        width: 100%;
+    }
+
+    .callback__form input,
+    .callback__form button{
+        width: 270px;
+    }
+
+    .header-top__logo{
+        position: relative;
+        margin-left: -8px;
+    }
+
+    .mobile-menu{
+        padding-left: 35px;
+    }
+}

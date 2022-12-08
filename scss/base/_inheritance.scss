@@ -1,0 +1,33 @@
+%flex-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+%heading {
+    padding-bottom: 10px;
+    padding-right: 60px;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 70px;
+        height: 5px;
+        background: $main-color;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    &::after {
+        content: '';
+        background-image: url(../img/icons/bus.svg);
+        width: 50px;
+        height: 29px;
+        position: absolute;
+        right: 0;
+        top: 5px;
+        background-size: cover;
+    }
+}
